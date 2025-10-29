@@ -16,17 +16,17 @@ anta.tests.connectivity:
 - VerifyLLDPNeighbors:
     neighbors:
     - neighbor_device: s1-spine1.atd.lab
-      neighbor_port: Ethernet6
+      neighbor_port: Ethernet7
       port: Ethernet2
     result_overwrite:
-      custom_field: 'Local: Ethernet2 - Remote: s1-spine1 Ethernet6'
+      custom_field: 'Local: Ethernet2 - Remote: s1-spine1 Ethernet7'
 - VerifyLLDPNeighbors:
     neighbors:
     - neighbor_device: s1-spine2.atd.lab
-      neighbor_port: Ethernet6
+      neighbor_port: Ethernet7
       port: Ethernet3
     result_overwrite:
-      custom_field: 'Local: Ethernet3 - Remote: s1-spine2 Ethernet6'
+      custom_field: 'Local: Ethernet3 - Remote: s1-spine2 Ethernet7'
 - VerifyReachability:
     hosts:
     - destination: 172.16.1.16
@@ -35,7 +35,7 @@ anta.tests.connectivity:
       vrf: default
     result_overwrite:
       custom_field: 'Source: P2P Interface Ethernet2 (IP: 172.16.1.17) - Destination:
-        s1-spine1 Ethernet6 (IP: 172.16.1.16)'
+        s1-spine1 Ethernet7 (IP: 172.16.1.16)'
 - VerifyReachability:
     hosts:
     - destination: 172.16.1.18
@@ -44,7 +44,7 @@ anta.tests.connectivity:
       vrf: default
     result_overwrite:
       custom_field: 'Source: P2P Interface Ethernet3 (IP: 172.16.1.19) - Destination:
-        s1-spine2 Ethernet6 (IP: 172.16.1.18)'
+        s1-spine2 Ethernet7 (IP: 172.16.1.18)'
 - VerifyReachability:
     hosts:
     - destination: 10.250.1.1
@@ -155,13 +155,13 @@ anta.tests.interfaces:
     - name: Ethernet2
       status: up
     result_overwrite:
-      custom_field: Interface Ethernet2 - P2P_s1-spine1_Ethernet6 = 'up'
+      custom_field: Interface Ethernet2 - P2P_s1-spine1_Ethernet7 = 'up'
 - VerifyInterfacesStatus:
     interfaces:
     - name: Ethernet3
       status: up
     result_overwrite:
-      custom_field: Interface Ethernet3 - P2P_s1-spine2_Ethernet6 = 'up'
+      custom_field: Interface Ethernet3 - P2P_s1-spine2_Ethernet7 = 'up'
 - VerifyInterfacesStatus:
     interfaces:
     - name: Ethernet4

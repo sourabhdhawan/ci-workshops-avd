@@ -31,9 +31,9 @@ anta.tests.connectivity:
     neighbors:
     - neighbor_device: s1-brdr1.atd.lab
       neighbor_port: Ethernet3
-      port: Ethernet6
+      port: Ethernet7
     result_overwrite:
-      custom_field: 'Local: Ethernet6 - Remote: s1-brdr1 Ethernet3'
+      custom_field: 'Local: Ethernet7 - Remote: s1-brdr1 Ethernet3'
 - VerifyLLDPNeighbors:
     neighbors:
     - neighbor_device: s1-brdr2.atd.lab
@@ -84,7 +84,7 @@ anta.tests.connectivity:
       source: 172.16.1.18
       vrf: default
     result_overwrite:
-      custom_field: 'Source: P2P Interface Ethernet6 (IP: 172.16.1.18) - Destination:
+      custom_field: 'Source: P2P Interface Ethernet7 (IP: 172.16.1.18) - Destination:
         s1-brdr1 Ethernet3 (IP: 172.16.1.19)'
 - VerifyReachability:
     hosts:
@@ -142,10 +142,10 @@ anta.tests.interfaces:
       custom_field: Interface Ethernet5 - P2P_s1-leaf4_Ethernet3 = 'up'
 - VerifyInterfacesStatus:
     interfaces:
-    - name: Ethernet6
+    - name: Ethernet7
       status: up
     result_overwrite:
-      custom_field: Interface Ethernet6 - P2P_s1-brdr1_Ethernet3 = 'up'
+      custom_field: Interface Ethernet7 - P2P_s1-brdr1_Ethernet3 = 'up'
 - VerifyInterfacesStatus:
     interfaces:
     - name: Ethernet8

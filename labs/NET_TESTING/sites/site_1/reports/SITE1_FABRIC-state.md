@@ -13,27 +13,27 @@
 
 | Total Tests | Total Tests Passed | Total Tests Failed | Total Tests Skipped |
 | ----------- | ------------------ | ------------------ | ------------------- |
-| 392 | 340 | 20 | 32 |
+| 392 | 352 | 8 | 32 |
 
 ### Summary Totals Device Under Test
 
 | Device Under Test | Total Tests | Tests Passed | Tests Failed | Tests Skipped | Categories Failed | Categories Skipped |
 | ------------------| ----------- | ------------ | ------------ | ------------- | ----------------- | ------------------ |
-| s1-brdr1 | 52 | 41 | 7 | 4 | BGP, Connectivity, System | Hardware |
+| s1-brdr1 | 52 | 47 | 1 | 4 | System | Hardware |
 | s1-brdr2 | 52 | 47 | 1 | 4 | System | Hardware |
 | s1-leaf1 | 53 | 48 | 1 | 4 | System | Hardware |
 | s1-leaf2 | 53 | 48 | 1 | 4 | System | Hardware |
 | s1-leaf3 | 53 | 48 | 1 | 4 | System | Hardware |
 | s1-leaf4 | 53 | 48 | 1 | 4 | System | Hardware |
-| s1-spine1 | 38 | 30 | 4 | 4 | BGP, Connectivity, System | Hardware |
-| s1-spine2 | 38 | 30 | 4 | 4 | BGP, Connectivity, System | Hardware |
+| s1-spine1 | 38 | 33 | 1 | 4 | System | Hardware |
+| s1-spine2 | 38 | 33 | 1 | 4 | System | Hardware |
 
 ### Summary Totals Per Category
 
 | Test Category | Total Tests | Tests Passed | Tests Failed | Tests Skipped |
 | ------------- | ----------- | ------------ | ------------ | ------------- |
-| BGP | 54 | 50 | 4 | 0 |
-| Connectivity | 108 | 100 | 8 | 0 |
+| BGP | 54 | 54 | 0 | 0 |
+| Connectivity | 108 | 108 | 0 | 0 |
 | Hardware | 32 | 0 | 0 | 32 |
 | Interfaces | 102 | 102 | 0 | 0 |
 | MLAG | 6 | 6 | 0 | 0 |
@@ -44,25 +44,13 @@
 
 | ID | Device Under Test | Categories | Test | Description | Inputs | Result | Messages |
 | -- | ----------------- | ---------- | ---- | ----------- | ------ | -------| -------- |
-| 4 | s1-brdr1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-spine1 (IP: 172.16.1.16) | FAIL | AFI: ipv4 SAFI: unicast VRF: default Peer: 172.16.1.16 - Session state is not established - State: Active |
-| 5 | s1-brdr1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-spine2 (IP: 172.16.1.18) | FAIL | AFI: ipv4 SAFI: unicast VRF: default Peer: 172.16.1.18 - Session state is not established - State: Active |
-| 7 | s1-brdr1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet2 - Remote: s1-spine1 Ethernet6 | FAIL | Port Ethernet2 (Neighbor: s1-spine1.atd.lab, Neighbor Port: Ethernet6) - Wrong LLDP neighbors: s1-spine1.atd.lab/Ethernet7 |
-| 8 | s1-brdr1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet3 - Remote: s1-spine2 Ethernet6 | FAIL | Port Ethernet3 (Neighbor: s1-spine2.atd.lab, Neighbor Port: Ethernet6) - Wrong LLDP neighbors: s1-spine2.atd.lab/Ethernet7 |
-| 18 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet2 (IP: 172.16.1.17) - Destination: s1-spine1 Ethernet6 (IP: 172.16.1.16) | FAIL | Host 172.16.1.16 (src: 172.16.1.17, vrf: default, size: 100B, repeat: 1) - Unreachable |
-| 19 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet3 (IP: 172.16.1.19) - Destination: s1-spine2 Ethernet6 (IP: 172.16.1.18) | FAIL | Host 172.16.1.18 (src: 172.16.1.19, vrf: default, size: 100B, repeat: 1) - Unreachable |
 | 52 | s1-brdr1 | System | VerifyReloadCause | Verifies the last reload cause of the device. | - | FAIL | Reload cause is: 'System reloaded due to Zero Touch Provisioning' |
 | 104 | s1-brdr2 | System | VerifyReloadCause | Verifies the last reload cause of the device. | - | FAIL | Reload cause is: 'System reloaded due to Zero Touch Provisioning' |
 | 157 | s1-leaf1 | System | VerifyReloadCause | Verifies the last reload cause of the device. | - | FAIL | Reload cause is: 'System reloaded due to Zero Touch Provisioning' |
 | 210 | s1-leaf2 | System | VerifyReloadCause | Verifies the last reload cause of the device. | - | FAIL | Reload cause is: 'System reloaded due to Zero Touch Provisioning' |
 | 263 | s1-leaf3 | System | VerifyReloadCause | Verifies the last reload cause of the device. | - | FAIL | Reload cause is: 'System reloaded due to Zero Touch Provisioning' |
 | 316 | s1-leaf4 | System | VerifyReloadCause | Verifies the last reload cause of the device. | - | FAIL | Reload cause is: 'System reloaded due to Zero Touch Provisioning' |
-| 323 | s1-spine1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-brdr1 (IP: 172.16.1.17) | FAIL | AFI: ipv4 SAFI: unicast VRF: default Peer: 172.16.1.17 - Session state is not established - State: Active |
-| 333 | s1-spine1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet6 - Remote: s1-brdr1 Ethernet2 | FAIL | Port Ethernet6 (Neighbor: s1-brdr1.atd.lab, Neighbor Port: Ethernet2) - Wrong LLDP neighbors: s1-spine2.atd.lab/Ethernet6 |
-| 339 | s1-spine1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet6 (IP: 172.16.1.16) - Destination: s1-brdr1 Ethernet2 (IP: 172.16.1.17) | FAIL | Host 172.16.1.17 (src: 172.16.1.16, vrf: default, size: 100B, repeat: 1) - Unreachable |
 | 354 | s1-spine1 | System | VerifyReloadCause | Verifies the last reload cause of the device. | - | FAIL | Reload cause is: 'System reloaded due to Zero Touch Provisioning' |
-| 361 | s1-spine2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-brdr1 (IP: 172.16.1.19) | FAIL | AFI: ipv4 SAFI: unicast VRF: default Peer: 172.16.1.19 - Session state is not established - State: Active |
-| 371 | s1-spine2 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet6 - Remote: s1-brdr1 Ethernet3 | FAIL | Port Ethernet6 (Neighbor: s1-brdr1.atd.lab, Neighbor Port: Ethernet3) - Wrong LLDP neighbors: s1-spine1.atd.lab/Ethernet6 |
-| 377 | s1-spine2 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet6 (IP: 172.16.1.18) - Destination: s1-brdr1 Ethernet3 (IP: 172.16.1.19) | FAIL | Host 172.16.1.19 (src: 172.16.1.18, vrf: default, size: 100B, repeat: 1) - Unreachable |
 | 392 | s1-spine2 | System | VerifyReloadCause | Verifies the last reload cause of the device. | - | FAIL | Reload cause is: 'System reloaded due to Zero Touch Provisioning' |
 
 ## All Test Results
@@ -72,11 +60,11 @@
 | 1 | s1-brdr1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP EVPN Peer: s1-spine1 (IP: 10.250.1.1) | PASS | - |
 | 2 | s1-brdr1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP EVPN Peer: s1-spine2 (IP: 10.250.1.2) | PASS | - |
 | 3 | s1-brdr1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-brdr2 (IP: 10.252.1.9) | PASS | - |
-| 4 | s1-brdr1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-spine1 (IP: 172.16.1.16) | FAIL | AFI: ipv4 SAFI: unicast VRF: default Peer: 172.16.1.16 - Session state is not established - State: Active |
-| 5 | s1-brdr1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-spine2 (IP: 172.16.1.18) | FAIL | AFI: ipv4 SAFI: unicast VRF: default Peer: 172.16.1.18 - Session state is not established - State: Active |
+| 4 | s1-brdr1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-spine1 (IP: 172.16.1.16) | PASS | - |
+| 5 | s1-brdr1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-spine2 (IP: 172.16.1.18) | PASS | - |
 | 6 | s1-brdr1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet1 - Remote: s1-brdr2 Ethernet1 | PASS | - |
-| 7 | s1-brdr1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet2 - Remote: s1-spine1 Ethernet6 | FAIL | Port Ethernet2 (Neighbor: s1-spine1.atd.lab, Neighbor Port: Ethernet6) - Wrong LLDP neighbors: s1-spine1.atd.lab/Ethernet7 |
-| 8 | s1-brdr1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet3 - Remote: s1-spine2 Ethernet6 | FAIL | Port Ethernet3 (Neighbor: s1-spine2.atd.lab, Neighbor Port: Ethernet6) - Wrong LLDP neighbors: s1-spine2.atd.lab/Ethernet7 |
+| 7 | s1-brdr1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet2 - Remote: s1-spine1 Ethernet7 | PASS | - |
+| 8 | s1-brdr1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet3 - Remote: s1-spine2 Ethernet7 | PASS | - |
 | 9 | s1-brdr1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet6 - Remote: s1-brdr2 Ethernet6 | PASS | - |
 | 10 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: Loopback0 (IP: 10.250.1.7) - Destination: s1-brdr1 Loopback0 (IP: 10.250.1.7) | PASS | - |
 | 11 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: Loopback0 (IP: 10.250.1.7) - Destination: s1-brdr2 Loopback0 (IP: 10.250.1.8) | PASS | - |
@@ -86,15 +74,15 @@
 | 15 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: Loopback0 (IP: 10.250.1.7) - Destination: s1-leaf4 Loopback0 (IP: 10.250.1.6) | PASS | - |
 | 16 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: Loopback0 (IP: 10.250.1.7) - Destination: s1-spine1 Loopback0 (IP: 10.250.1.1) | PASS | - |
 | 17 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: Loopback0 (IP: 10.250.1.7) - Destination: s1-spine2 Loopback0 (IP: 10.250.1.2) | PASS | - |
-| 18 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet2 (IP: 172.16.1.17) - Destination: s1-spine1 Ethernet6 (IP: 172.16.1.16) | FAIL | Host 172.16.1.16 (src: 172.16.1.17, vrf: default, size: 100B, repeat: 1) - Unreachable |
-| 19 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet3 (IP: 172.16.1.19) - Destination: s1-spine2 Ethernet6 (IP: 172.16.1.18) | FAIL | Host 172.16.1.18 (src: 172.16.1.19, vrf: default, size: 100B, repeat: 1) - Unreachable |
+| 18 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet2 (IP: 172.16.1.17) - Destination: s1-spine1 Ethernet7 (IP: 172.16.1.16) | PASS | - |
+| 19 | s1-brdr1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet3 (IP: 172.16.1.19) - Destination: s1-spine2 Ethernet7 (IP: 172.16.1.18) | PASS | - |
 | 20 | s1-brdr1 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentCooling test is not supported on cEOSLab. |
 | 21 | s1-brdr1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentPower test is not supported on cEOSLab. |
 | 22 | s1-brdr1 | Hardware | VerifyTemperature | Verifies if the device temperature is within acceptable limits. | - | SKIPPED | VerifyTemperature test is not supported on cEOSLab. |
 | 23 | s1-brdr1 | Hardware | VerifyTransceiversManufacturers | Verifies if all the transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | SKIPPED | VerifyTransceiversManufacturers test is not supported on cEOSLab. |
 | 24 | s1-brdr1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet1 - MLAG_s1-brdr2_Ethernet1 = 'up' | PASS | - |
-| 25 | s1-brdr1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet2 - P2P_s1-spine1_Ethernet6 = 'up' | PASS | - |
-| 26 | s1-brdr1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet3 - P2P_s1-spine2_Ethernet6 = 'up' | PASS | - |
+| 25 | s1-brdr1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet2 - P2P_s1-spine1_Ethernet7 = 'up' | PASS | - |
+| 26 | s1-brdr1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet3 - P2P_s1-spine2_Ethernet7 = 'up' | PASS | - |
 | 27 | s1-brdr1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet4 - P2P_s2-brdr1_Ethernet4 = 'up' | PASS | - |
 | 28 | s1-brdr1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet6 - MLAG_s1-brdr2_Ethernet6 = 'up' | PASS | - |
 | 29 | s1-brdr1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Loopback0 - ROUTER_ID = 'up' | PASS | - |
@@ -391,7 +379,7 @@
 | 320 | s1-spine1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP EVPN Peer: s1-leaf2 (IP: 10.250.1.4) | PASS | - |
 | 321 | s1-spine1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP EVPN Peer: s1-leaf3 (IP: 10.250.1.5) | PASS | - |
 | 322 | s1-spine1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP EVPN Peer: s1-leaf4 (IP: 10.250.1.6) | PASS | - |
-| 323 | s1-spine1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-brdr1 (IP: 172.16.1.17) | FAIL | AFI: ipv4 SAFI: unicast VRF: default Peer: 172.16.1.17 - Session state is not established - State: Active |
+| 323 | s1-spine1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-brdr1 (IP: 172.16.1.17) | PASS | - |
 | 324 | s1-spine1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-brdr2 (IP: 172.16.1.21) | PASS | - |
 | 325 | s1-spine1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-leaf1 (IP: 172.16.1.1) | PASS | - |
 | 326 | s1-spine1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-leaf2 (IP: 172.16.1.5) | PASS | - |
@@ -401,13 +389,13 @@
 | 330 | s1-spine1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet3 - Remote: s1-leaf2 Ethernet2 | PASS | - |
 | 331 | s1-spine1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet4 - Remote: s1-leaf3 Ethernet2 | PASS | - |
 | 332 | s1-spine1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet5 - Remote: s1-leaf4 Ethernet2 | PASS | - |
-| 333 | s1-spine1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet6 - Remote: s1-brdr1 Ethernet2 | FAIL | Port Ethernet6 (Neighbor: s1-brdr1.atd.lab, Neighbor Port: Ethernet2) - Wrong LLDP neighbors: s1-spine2.atd.lab/Ethernet6 |
+| 333 | s1-spine1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet7 - Remote: s1-brdr1 Ethernet2 | PASS | - |
 | 334 | s1-spine1 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet8 - Remote: s1-brdr2 Ethernet2 | PASS | - |
 | 335 | s1-spine1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet2 (IP: 172.16.1.0) - Destination: s1-leaf1 Ethernet2 (IP: 172.16.1.1) | PASS | - |
 | 336 | s1-spine1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet3 (IP: 172.16.1.4) - Destination: s1-leaf2 Ethernet2 (IP: 172.16.1.5) | PASS | - |
 | 337 | s1-spine1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet4 (IP: 172.16.1.8) - Destination: s1-leaf3 Ethernet2 (IP: 172.16.1.9) | PASS | - |
 | 338 | s1-spine1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet5 (IP: 172.16.1.12) - Destination: s1-leaf4 Ethernet2 (IP: 172.16.1.13) | PASS | - |
-| 339 | s1-spine1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet6 (IP: 172.16.1.16) - Destination: s1-brdr1 Ethernet2 (IP: 172.16.1.17) | FAIL | Host 172.16.1.17 (src: 172.16.1.16, vrf: default, size: 100B, repeat: 1) - Unreachable |
+| 339 | s1-spine1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet7 (IP: 172.16.1.16) - Destination: s1-brdr1 Ethernet2 (IP: 172.16.1.17) | PASS | - |
 | 340 | s1-spine1 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet8 (IP: 172.16.1.20) - Destination: s1-brdr2 Ethernet2 (IP: 172.16.1.21) | PASS | - |
 | 341 | s1-spine1 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentCooling test is not supported on cEOSLab. |
 | 342 | s1-spine1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentPower test is not supported on cEOSLab. |
@@ -417,7 +405,7 @@
 | 346 | s1-spine1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet3 - P2P_s1-leaf2_Ethernet2 = 'up' | PASS | - |
 | 347 | s1-spine1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet4 - P2P_s1-leaf3_Ethernet2 = 'up' | PASS | - |
 | 348 | s1-spine1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet5 - P2P_s1-leaf4_Ethernet2 = 'up' | PASS | - |
-| 349 | s1-spine1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet6 - P2P_s1-brdr1_Ethernet2 = 'up' | PASS | - |
+| 349 | s1-spine1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet7 - P2P_s1-brdr1_Ethernet2 = 'up' | PASS | - |
 | 350 | s1-spine1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet8 - P2P_s1-brdr2_Ethernet2 = 'up' | PASS | - |
 | 351 | s1-spine1 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Loopback0 - ROUTER_ID = 'up' | PASS | - |
 | 352 | s1-spine1 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
@@ -429,7 +417,7 @@
 | 358 | s1-spine2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP EVPN Peer: s1-leaf2 (IP: 10.250.1.4) | PASS | - |
 | 359 | s1-spine2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP EVPN Peer: s1-leaf3 (IP: 10.250.1.5) | PASS | - |
 | 360 | s1-spine2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP EVPN Peer: s1-leaf4 (IP: 10.250.1.6) | PASS | - |
-| 361 | s1-spine2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-brdr1 (IP: 172.16.1.19) | FAIL | AFI: ipv4 SAFI: unicast VRF: default Peer: 172.16.1.19 - Session state is not established - State: Active |
+| 361 | s1-spine2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-brdr1 (IP: 172.16.1.19) | PASS | - |
 | 362 | s1-spine2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-brdr2 (IP: 172.16.1.23) | PASS | - |
 | 363 | s1-spine2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-leaf1 (IP: 172.16.1.3) | PASS | - |
 | 364 | s1-spine2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s) for given address families. | BGP IPv4 Unicast Peer: s1-leaf2 (IP: 172.16.1.7) | PASS | - |
@@ -439,13 +427,13 @@
 | 368 | s1-spine2 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet3 - Remote: s1-leaf2 Ethernet3 | PASS | - |
 | 369 | s1-spine2 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet4 - Remote: s1-leaf3 Ethernet3 | PASS | - |
 | 370 | s1-spine2 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet5 - Remote: s1-leaf4 Ethernet3 | PASS | - |
-| 371 | s1-spine2 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet6 - Remote: s1-brdr1 Ethernet3 | FAIL | Port Ethernet6 (Neighbor: s1-brdr1.atd.lab, Neighbor Port: Ethernet3) - Wrong LLDP neighbors: s1-spine1.atd.lab/Ethernet6 |
+| 371 | s1-spine2 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet7 - Remote: s1-brdr1 Ethernet3 | PASS | - |
 | 372 | s1-spine2 | Connectivity | VerifyLLDPNeighbors | Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors. | Local: Ethernet8 - Remote: s1-brdr2 Ethernet3 | PASS | - |
 | 373 | s1-spine2 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet2 (IP: 172.16.1.2) - Destination: s1-leaf1 Ethernet3 (IP: 172.16.1.3) | PASS | - |
 | 374 | s1-spine2 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet3 (IP: 172.16.1.6) - Destination: s1-leaf2 Ethernet3 (IP: 172.16.1.7) | PASS | - |
 | 375 | s1-spine2 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet4 (IP: 172.16.1.10) - Destination: s1-leaf3 Ethernet3 (IP: 172.16.1.11) | PASS | - |
 | 376 | s1-spine2 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet5 (IP: 172.16.1.14) - Destination: s1-leaf4 Ethernet3 (IP: 172.16.1.15) | PASS | - |
-| 377 | s1-spine2 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet6 (IP: 172.16.1.18) - Destination: s1-brdr1 Ethernet3 (IP: 172.16.1.19) | FAIL | Host 172.16.1.19 (src: 172.16.1.18, vrf: default, size: 100B, repeat: 1) - Unreachable |
+| 377 | s1-spine2 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet7 (IP: 172.16.1.18) - Destination: s1-brdr1 Ethernet3 (IP: 172.16.1.19) | PASS | - |
 | 378 | s1-spine2 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | Source: P2P Interface Ethernet8 (IP: 172.16.1.22) - Destination: s1-brdr2 Ethernet3 (IP: 172.16.1.23) | PASS | - |
 | 379 | s1-spine2 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentCooling test is not supported on cEOSLab. |
 | 380 | s1-spine2 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentPower test is not supported on cEOSLab. |
@@ -455,7 +443,7 @@
 | 384 | s1-spine2 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet3 - P2P_s1-leaf2_Ethernet3 = 'up' | PASS | - |
 | 385 | s1-spine2 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet4 - P2P_s1-leaf3_Ethernet3 = 'up' | PASS | - |
 | 386 | s1-spine2 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet5 - P2P_s1-leaf4_Ethernet3 = 'up' | PASS | - |
-| 387 | s1-spine2 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet6 - P2P_s1-brdr1_Ethernet3 = 'up' | PASS | - |
+| 387 | s1-spine2 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet7 - P2P_s1-brdr1_Ethernet3 = 'up' | PASS | - |
 | 388 | s1-spine2 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Ethernet8 - P2P_s1-brdr2_Ethernet3 = 'up' | PASS | - |
 | 389 | s1-spine2 | Interfaces | VerifyInterfacesStatus | Verifies the operational states of specified interfaces to ensure they match expected configurations. | Interface Loopback0 - ROUTER_ID = 'up' | PASS | - |
 | 390 | s1-spine2 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
