@@ -257,3 +257,6 @@ anta.tests.routing.generic:
 anta.tests.system:
 - VerifyNTP: null
 - VerifyReloadCause: null
+- VerifyCPUUtilization: null
+- VerifyMemoryUtilization: null
+- VerifyFileSystemUtilization: null
